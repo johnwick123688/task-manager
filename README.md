@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Buoc 1: them toan bo file vao stage
+```shell
+$ git add .
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Buoc 2: commit toan bo thay doi
+```shell
+$ git commit -m "thay doi gi ghi vao day"
+```
 
-## Available Scripts
+Buoc 3: day len github
+```shell
+$ git push
+```
+Dung de tao nhanh moi
+```
+$ git checkout -b feat/register
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- {/* // <div className="travel">
+        //     <h1 className="title_1">Live Anywhere</h1>
+        //     <h2 className="title_2">Keep calm  & travel on</h2>
+        //     <div className="Img1">
+        //         <div>
+        //             <div className="Img1_1">
+        //                 <img  */}
+        {/* //                     src="https://images.unsplash.com/photo-1656119651670-ec9610795a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"                       
+        //                     alt=""
+        //                     className="w-full h-full rounded-lg object-cover"
+        //                 />
+        //             </div> */}
+        //             <h3 className="text-center font-medium text-lg mb-1">Enjoy the great cold</h3>
+        //             <span className="block text-center text-gray-400 text-sm">6,789 properties</span>
+        //         </div>
+        //         <div>
+        //             <div className="Img1_1">
+        //                 <img 
+        //                     src="https://images.unsplash.com/photo-1656119651670-ec9610795a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"                       
+        //                     alt=""
+        //                     className="w-full h-full rounded-lg object-cover"
+        //                 />
+        //             </div>
+        //             <h3 className="text-center font-medium text-lg mb-1">Enjoy the great cold</h3>
+        //             <span className="block text-center text-gray-400 text-sm">6,789 properties</span>
+        //         </div>
+        //         <div>
+        //             <div className="Img1_1">
+        //                 <img 
+        //                     src="https://images.unsplash.com/photo-1656119651670-ec9610795a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"                       
+        //                     alt=""
+        //                     className="w-full h-full rounded-lg object-cover"
+        //                 />
+        //             </div>
+        //             <h3 className="text-center font-medium text-lg mb-1">Enjoy the great cold</h3>
+        //             <span className="block text-center text-gray-400 text-sm">6,789 properties</span>
+        //         </div>
+        //     </div>
+        // </div> -->
