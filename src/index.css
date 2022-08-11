@@ -7,7 +7,22 @@ body {
     font-family: 'Poppin', sans-serif;
 }
 
+.text1{
+    @apply relative h-6 mt-5;
+}
 
+.text1:after{
+    @apply h-px absolute w-full bg-slate-300;
+    top: 50%;
+    content: '';
+}
+
+.text1 span{
+    @apply absolute top-0 bg-white;
+    z-index: 1;
+    left: 50%;
+    padding: 0 10px;
+}
 /* .travel {
     @apply pt-12
 

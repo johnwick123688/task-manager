@@ -20,33 +20,35 @@ export default function Register() {
                     </h2>                   
                     
                     <form action="#" method="POST" className="pt-10">
-                        <button type="submit" className="">
-                            <div className="flex w-full bg-purple-500 mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3">
+                        {/* button Register google */}
+                        <button type="submit" className="w-full block bg-slate-100 border mt-2 border-gray-300 rounded-md px-4 py-2">
+                            <div className="flex items-center justify-center">
                                 <img 
                                     src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
                                     alt=""
-                                    className="h-8"
+                                    className="h-9 mx-3"
                                 />
-                                <span className="ml-4">
+                                <span className="font-semibold text-gray-500">
                                     Sign up with Google
                                 </span>
-                            </div>
+                            </div>     
                         </button>
-                        <div className="flex">
-                            <hr className="my-6 border-gray-300 md:w-1/2"/>
-                            <span className="">or</span>
-                            <hr className="my-6 border-gray-300 md:w-1/2"/>
+                        {/* button Register google */}
 
+                        <div className="text1">
+                            <span>or</span>
+                        </div>      
+
+                        <div className="mt-4">
+                            <label className="text-sm">Email address</label>
+                            <input type="email" placeholder="email..." className="w-full bg-white mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3"/>
                         </div>
-                        <div className="">
-                            <label>Email address</label>
-                            <input type="email" placeholder="email..." className="w-full bg-slate-100 mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3"/>
+
+                        <div className="mt-4">
+                            <label className="text-sm">Password</label>
+                            <input type="password" placeholder="password..." className="w-full bg-white mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3"/>
                         </div>
-                        <div className="">
-                            <label>Password</label>
-                            <input type="password" placeholder="password..." className="w-full bg-slate-100 mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3"/>
-                        </div>
-                        <button type="submit" className="w-full">
+                        <button type="submit" className="w-full mt-7">
                             <div className="bg-purple-500 mt-2 border focus-visible:border-purple-400 focus:bg-gray-100 focus:outline-purple-400 rounded-md px-4 py-3">
                                 <span className="text-center text-white font-medium ">Sign up free</span>
                             </div>

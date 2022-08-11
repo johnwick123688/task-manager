@@ -17,6 +17,19 @@ Dung de tao nhanh moi
 $ git checkout -b feat/register
 ```
 
+```
+ERROR
+git push --set-upstream origin feat/register
+```
+
+```
+git status
+git branch
+git add . 
+git commit -m "thay doi gi ghi vao day"
+git push
+```
+
 <!-- {/* // <div className="travel">
         //     <h1 className="title_1">Live Anywhere</h1>
         //     <h2 className="title_2">Keep calm  & travel on</h2>
