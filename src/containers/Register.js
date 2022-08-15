@@ -1,7 +1,15 @@
+import { useState } from "react"
 import Button from "../components/Button"
 import Input from "../components/Input"
 
 export default function Register() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleClick = () => {
+        console.log({email, password})
+    }
+
     return (
         <section className="flex flex-col md:flex-row h-screen items-center">
 
@@ -18,9 +26,6 @@ export default function Register() {
             <div className="bg-white items-center flex md:mx-auto md:max-w-md w-full md:w-1/2 xl:w-1/2 px-6 lg:px-16 xl:px-12">
                 <div className="w-full h-100">
                     <h1 className="text-center text-3xl font-semibold">Task Manager</h1>
-                    {/* <h2 className="text-center text-sm text-gray-400 pt-3">Just last month. 11,523 3D Artists also signed up for 
-                        <span className="text-black font-semibold "> poli.co</span>
-                    </h2> */}
 
                     <form action="#" method="POST" className="pt-10">
                         {/* button Register google */}                 
@@ -41,11 +46,11 @@ export default function Register() {
                             <span>or</span>
                         </div>
 
-                        <Input type={'email'} placeholder={"email..."} title={"Email Address"} onChange={handleChange()}/>
-                        <Input type={'password'} placeholder={"password..."} title={"Password"}/>
+                        <Input value={email} type={'email'} placeholder={"email..."} title={"Email Address"} onChange={e=>setEmail(e.target.value)}/>
+                        <Input value={password} type={'password'} placeholder={"password..."} title={"Password"} onChange={e=>setPassword(e.target.value)}/>
 
                         {/* button sign up */}
-                        <Button color={"primary"} title={"Sign up free"} />
+                        <Button color={"primary"} title={"Sign up free"} onClick={handleClick}/>
                         {/* button sign up */}
 
                         <p className="text-center mt-10">

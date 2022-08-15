@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Input({ title, type, placeholder, onChange }) {
     const [inputValue, setInputValue] = useState('')
@@ -6,7 +6,7 @@ export default function Input({ title, type, placeholder, onChange }) {
     const handleChange = (e) => {
         setInputValue(e.target.value);
         if (onChange) onChange(e.target.value)
-    }
+    }    
 
     return (
         <div className="mt-4">
@@ -21,3 +21,7 @@ export default function Input({ title, type, placeholder, onChange }) {
         </div>
     )
 }
+
+//tao onclick cua btn component 
+//lay gia tri cua email va password va luu vao state cua file register.js
+
