@@ -1,13 +1,29 @@
 import { useState } from "react"
 import Button from "../components/Button"
 import Input from "../components/Input"
+import { registerUser } from "../service/user"
+import { BadgeCheckIcon } from '@heroicons/react/outline'
 
 export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [show, setShow] = useState(false)
 
     const handleClick = () => {
-        console.log({email, password})
+        // if(password.length >= 4 && password.length <= 16) {
+        //     password
+        // }
+        registerUser({email, password})
+            .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            setShow(true)
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
     }
 
     return (
@@ -46,8 +62,8 @@ export default function Register() {
                             <span>or</span>
                         </div>
 
-                        <Input value={email} type={'email'} placeholder={"email..."} title={"Email Address"} onChange={e=>setEmail(e.target.value)}/>
-                        <Input value={password} type={'password'} placeholder={"password..."} title={"Password"} onChange={e=>setPassword(e.target.value)}/>
+                        <Input value={email} type={'email'} placeholder={"email..."} title={"Email Address"} onChange={(value)=>setEmail(value)}/>
+                        <Input value={password} type={'password'} placeholder={"password..."} title={"Password"} onChange={(value)=>setPassword(value)}/>
 
                         {/* button sign up */}
                         <Button color={"primary"} title={"Sign up free"} onClick={handleClick}/>
@@ -68,6 +84,22 @@ export default function Register() {
                 </div>
             </div>
             {/* login right */}
+
+            {/* login success */}
+            {show && (
+                <div className="flex p-3 px-6 bg-green-200">
+                    <BadgeCheckIcon className=" h-5 w-5 text-green-500"/>
+                    <h1 className="text-green-700">Login success</h1>
+                </div>
+            )}
+            
         </section>
     )
 }
+
+//validate email va pw
+    //email phai ton tai va dung dang
+    //pw fai co toi thieu 4 max 16, co 1 chu in hoa [a-z], co 1 so 
+//validate fail => bao email hoac pw k hop le
+
+//component success and fail

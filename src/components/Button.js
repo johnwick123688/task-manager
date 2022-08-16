@@ -1,13 +1,13 @@
 
 
-export default function Button({ color, title, icon, email, password}) {
+export default function Button({ color, title, icon, onClick}) {
     const background = color === 'primary' ? 'bg-purple-500' : 'bg-gray-100';
     const textColor = color === 'primary' ? 'text-white' : 'text-gray-500';
     
     
     const handleClick = (e) => {
         e.preventDefault()
-       console.log({email, password});
+       if(onClick) onClick()
     }
 
     return (
