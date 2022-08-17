@@ -1,8 +1,9 @@
 import { useState } from "react"
 import Button from "../components/Button"
 import Input from "../components/Input"
+import Noti from "../components/Noti"
 import { registerUser } from "../service/user"
-import { BadgeCheckIcon } from '@heroicons/react/outline'
+
 
 export default function Register() {
     const [email, setEmail] = useState('')
@@ -10,9 +11,15 @@ export default function Register() {
     const [show, setShow] = useState(false)
 
     const handleClick = () => {
-        // if(password.length >= 4 && password.length <= 16) {
-        //     password
-        // }
+        //validate email
+        var regexE = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        return regexE.test(email) ? undefined : alert('Pls fill email correct');    
+
+        //validate password
+        var regexP = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{4,16}$/;
+        return regexP.test(password) ? undefined : alert('pls fill password correct')
+        
+        //register
         registerUser({email, password})
             .then((userCredential) => {
             // Signed in 
@@ -86,12 +93,8 @@ export default function Register() {
             {/* login right */}
 
             {/* login success */}
-            {show && (
-                <div className="flex p-3 px-6 bg-green-200">
-                    <BadgeCheckIcon className=" h-5 w-5 text-green-500"/>
-                    <h1 className="text-green-700">Login success</h1>
-                </div>
-            )}
+            {show && <Noti title/>}
+            {/* login success */}
             
         </section>
     )
