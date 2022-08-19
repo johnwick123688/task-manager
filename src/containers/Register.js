@@ -9,28 +9,27 @@ export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [show, setShow] = useState(false)
+    const [error, setError] = useState(false)
 
     const handleClick = () => {
         //validate email
         var regexE = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        return regexE.test(email) ? undefined : alert('Pls fill email correct');    
-
-        //validate password
         var regexP = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{4,16}$/;
-        return regexP.test(password) ? undefined : alert('pls fill password correct')
-        
-        //register
-        registerUser({email, password})
-            .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            setShow(true)
-            })
-            .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
-          });
+        if (regexE.test(email) === true && regexP.test(password) === true) {
+            registerUser({email, password})
+                .then((userCredential) => {
+
+                const user = userCredential.user;
+                setShow(true)
+                })
+                .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                });
+        } else {
+            setError(true)
+        }
     }
 
     return (
@@ -93,16 +92,14 @@ export default function Register() {
             {/* login right */}
 
             {/* login success */}
-            {show && <Noti title/>}
+            {show && <Noti colorS={"green"} title={'Login Success'}/>}
+            {error && <Noti colorS={"red"} title={'Login Fail'}/>}
             {/* login success */}
-            
         </section>
     )
 }
 
-//validate email va pw
-    //email phai ton tai va dung dang
-    //pw fai co toi thieu 4 max 16, co 1 chu in hoa [a-z], co 1 so 
-//validate fail => bao email hoac pw k hop le
-
-//component success and fail
+//chi hien 1 thong bao thanh cong hoac that bai
+//study css
+//hoc cach viet tu class cha xuong con
+//truy cap nhieu ten class tren 1 the 

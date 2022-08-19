@@ -1,0 +1,28 @@
+
+.notification{
+    @apply flex p-3 px-6
+}
+
+.notification.green{
+    @apply bg-green-200
+}
+
+.notification.red{
+    @apply bg-red-200
+}
+
+.notification.green .icon1 {
+    @apply text-green-500
+}
+
+.notification.red .icon1{
+    @apply text-red-500
+}
+
+.notification.green .title1{
+    @apply text-green-700
+}
+
+.notification.red .title1{
+    @apply text-red-700
+}
