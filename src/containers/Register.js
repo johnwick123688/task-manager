@@ -29,6 +29,7 @@ export default function Register() {
                 });
         } else {
             setError(true)
+            setShow(false)
         }
     }
 
@@ -99,7 +100,7 @@ export default function Register() {
     )
 }
 
-//chi hien 1 thong bao thanh cong hoac that bai
+//chi hien 1 thong bao thanh cong hoac that bai: done
 //study css
 //hoc cach viet tu class cha xuong con
 //truy cap nhieu ten class tren 1 the 
