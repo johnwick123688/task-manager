@@ -3,20 +3,50 @@ import { useState } from "react"
 export default function Todo() {
     const [job, setJob] = useState('')
     const [todos, setTodos] = useState([])
+    const [checked, setChecked] = useState('ALL')
 
     const handleKey = (e) => {
         if (e.code === "Enter") {
             setTodos([
                 ...todos,
-                { 
-                    title: job, 
-                    status: 'CHUA_HOAN_THANH' 
+                {
+                    title: job,
+                    status: 'CHUA_HOAN_THANH'
                 }
             ]) //noi gia tri mang
             setJob('')
         }
     }
-    console.log(todos);
+
+    const handleCheck = (index) => {
+        setTodos(todos.map(function (todo, id) {
+            if (id === index) {
+                if (todo.status === 'CHUA_HOAN_THANH') {
+                    todo.status = 'HOAN_THANH'
+                } else {
+                    todo.status = 'CHUA_HOAN_THANH'
+                }
+            }
+            return todo
+        }))
+        // setTodos((prevTodo) => {
+        //     return prevTodo.map(function (todo, id) {
+        //         console.log(id, index);
+        //         if (id === index) {
+        //             console.log('a ', index);
+        //             if (todo.status === 'CHUA_HOAN_THANH') {
+        //                 todo.status = 'HOAN_THANH'
+        //             } else {
+        //                 todo.status = 'CHUA_HOAN_THANH'
+        //             }
+        //             console.log(todo);
+        //         }
+        //         return todo
+        //     }
+        //     )
+        // })
+    }
+    console.log(checked);
     return (
         <div className="text-center items-center justify-center">
             <h1 className="text-8xl">TODO LIST</h1>
@@ -26,27 +56,47 @@ export default function Todo() {
                 onChange={(e) => setJob(e.target.value)}
             />
             <div>
-                {todos.map((todo, id) => (                  
-                    <div key={id}>
-                  {  console.log(id)}
-                  {console.log(todo.title)}
-                        <input
-                            type="checkbox"
-                            checked={todo.status === 'HOAN_THANH'}
-                            onChange={id === todo.title ? todo.status = 'HOAN_THANH' : todo.status = 'CHUA_HOAN_THANH'}
-                        />
-                        {todo.title}
-                    </div>
-                ))}
+                {todos.map((todo, id) => {
+                    {/* if (todo.status === checked) {
+                        return (<div key={id}>
+                            <input
+                                type="checkbox"
+                                checked={todo.status === 'HOAN_THANH'}
+                                onChange={() => handleCheck(id)}
+                            />
+                            {todo.title}
+                        </div>)
+                    } else {
+                        return (<div key={id}>
+                            <input
+                                type="checkbox"
+                                onChange={() => handleCheck(id)}
+                            />
+                            {todo.title}
+                        </div>)
+                    } */}
+                    if (todo.status === checked)  return null
+                    return (<div key={id}>
+                            <input
+                                type="checkbox"
+                                checked={todo.status === 'HOAN_THANH'}
+                                onChange={() => handleCheck(id)}
+                            />
+                            {todo.title}
+                        </div>)
+                })}
+            </div>
+
+            <div className="flex justify-center">
+                <div className="mr-4" onClick={() => setChecked('ALL')}>All</div>
+                <div className="mr-4" onClick={() => setChecked('HOAN_THANH')}>HOAN_THANH</div>
+                <div className="mr-4" onClick={() => setChecked('CHUA_HOAN_THANH')}>CHUA_HOAN_THANH</div>
             </div>
         </div>
     )
 }
 
-// temp2.map(function(temp, index){
-//     if (index === 1){
-//         temp.status = 'HOAN_THANH'
-//     }
-//     return temp
-// })
-
+//thay doi gt state
+//thay doi gt state vs kieu gt mang
+//thay doi gt state vs kieu gt object
+//luu y: cach thay doi: them, sua, xoa
